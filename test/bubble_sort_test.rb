@@ -50,4 +50,9 @@ class BubbleSortTest < Minitest::Test
     assert_equal ["a", "b", "c", "d", "d"], @sorter.sorted
   end
 
+  def test_it_can_sort_multichar_strings
+    @sorter.sort(["abc", "gad", "aaa"])
+    assert_equal ["aaa", "abc", "gad"], @sorter.sorted
+  end
+
 end
