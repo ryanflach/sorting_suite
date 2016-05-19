@@ -7,4 +7,8 @@ attr_reader :sorted,
     @sorted = []
   end
 
+  def sort(array)
+    @unsorted = array
+  end
+
 end

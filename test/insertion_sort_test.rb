@@ -15,4 +15,9 @@ class InsertionSortTest < Minitest::Test
     assert @sorter.unsorted.empty?
   end
 
+  def test_it_assigns_a_passed_in_array_to_unsorted_when_sorting
+    @sorter.sort([1, 0, 4, 3, 2])
+    assert_equal [1, 0, 4, 3, 2], @sorter.unsorted
+  end
+
 end
