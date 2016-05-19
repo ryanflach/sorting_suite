@@ -12,6 +12,8 @@ class BubbleSort
   def sort(array, end_index=array.size-1)
     if array.empty?
       nil
+    elsif end_index == 0
+      @sorted = array
     else
       end_index.times do |index|
         @previous = array[index]
@@ -23,7 +25,6 @@ class BubbleSort
         @sorted = array
         sort(array, end_index - 1)
       end
-      sorted
     end
   end
 

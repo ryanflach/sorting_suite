@@ -21,5 +21,10 @@ class BubbleSortTest < Minitest::Test
     assert_equal nil, @sorter.sort([])
   end
 
+  def test_sorting_an_array_with_one_item_returns_the_item
+    @sorter.sort([2])
+    assert_equal [2], @sorter.sorted
+  end
+
 
 end
