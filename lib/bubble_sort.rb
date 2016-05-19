@@ -28,6 +28,7 @@ class BubbleSort
       @sorted = array
       bubble_sort(array, end_index - 1)
     end
+    sorted
   end
 
 end

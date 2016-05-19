@@ -22,6 +22,11 @@ class BubbleSortTest < Minitest::Test
     assert_equal [1, 2, 3, 4, 5], @sorter.sorted
   end
 
+  def test_it_can_sort_a_reverse_sorted_array
+    @sorter.sort([5, 4, 3, 2, 1])
+    assert_equal [1, 2, 3, 4, 5], @sorter.sorted
+  end
+
   def test_sorting_an_empty_array_returns_nil
     assert_equal nil, @sorter.sort([])
   end
@@ -35,5 +40,14 @@ class BubbleSortTest < Minitest::Test
     assert_equal [5], @sorter.sorted
   end
 
+  def test_it_can_also_sort_letters
+    @sorter.sort(["a", "d", "c", "b"])
+    assert_equal ["a", "b", "c", "d"], @sorter.sorted
+  end
+
+  def test_it_can_still_sort_if_there_are_repeating_values
+    @sorter.sort(["a", "d", "d", "b", "c"])
+    assert_equal ["a", "b", "c", "d", "d"], @sorter.sorted
+  end
 
 end
