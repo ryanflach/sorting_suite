@@ -18,7 +18,7 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_can_sort_a_larger_array
-    @sorter.sort([5, 3, 4, 2, 1])
+    @sorter.sort([4, 2, 5, 1, 3])
     assert_equal [1, 2, 3, 4, 5], @sorter.sorted
   end
 

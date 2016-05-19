@@ -5,8 +5,6 @@ class BubbleSort
 
   def initialize
     @sorted = []
-    @previous = nil
-    @current = nil
   end
 
   def sort(array, end_index=array.size-1)
@@ -15,16 +13,20 @@ class BubbleSort
     elsif end_index == 0
       @sorted = array
     else
-      end_index.times do |index|
-        @previous = array[index]
-        @current = array[index + 1]
-        if current < previous
-          array[index] = current
-          array[index + 1] = previous
-        end
-        @sorted = array
-        sort(array, end_index - 1)
+      bubble_sort(array, end_index)
+    end
+  end
+
+  def bubble_sort(array, end_index)
+    end_index.times do |index|
+      previous = array[index]
+      current = array[index + 1]
+      if current < previous
+        array[index] = current
+        array[index + 1] = previous
       end
+      @sorted = array
+      bubble_sort(array, end_index - 1)
     end
   end
 
