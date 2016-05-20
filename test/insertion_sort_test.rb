@@ -7,24 +7,24 @@ class InsertionSortTest < Minitest::Test
     @sorter = InsertionSort.new
   end
 
-  def test_sorted_array_is_empty_when_initialized
-    assert @sorter.sorted.empty?
+  def test_can_sort_only_one_item
+    assert_equal [1], @sorter.sort([1])
   end
 
-  def test_unsorted_array_is_empty_when_initialized
-    assert @sorter.unsorted.empty?
+  def test_it_can_sort_two_items
+    assert_equal [1, 5], @sorter.sort([5,1])
   end
 
-  def test_it_assigns_a_passed_in_array_to_unsorted_when_sorting
-    @sorter.sort([1, 0, 4, 3, 2])
-    assert_equal [1, 0, 4, 3, 2], @sorter.unsorted
+  def test_it_does_nothing_to_an_already_sorted_array
+    assert_equal [1, 2, 3], @sorter.sort([1, 2, 3])
   end
 
-  def test_sort_adds_the_first_value_of_the_array_to_sorted
-    @sorter.sort([1])
-    assert_equal [1], @sorter.sorted
+  def test_it_can_sort_an_array
+    assert_equal [0, 1, 5], @sorter.sort([1, 0, 5])
   end
 
-  
+  def test_it_can_sort_a_reverse_sorted_array
+    assert_equal [3, 4, 5], @sorter.sort([5, 4, 3])
+  end
 
 end
