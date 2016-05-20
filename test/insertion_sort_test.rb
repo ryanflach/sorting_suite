@@ -24,7 +24,7 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_it_can_sort_a_reverse_sorted_array
-    assert_equal [3, 4, 5], @sorter.sort([5, 4, 3])
+    assert_equal [1, 2, 3, 4, 5], @sorter.sort([5, 4, 3, 2, 1])
   end
 
 end

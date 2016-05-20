@@ -4,9 +4,13 @@ attr_reader :sorted
   def sort(array)
     return array if array.size <= 1
     sorted = [array.shift]
-    array.each do |item|
-      times_through = sorted.size - 1
-      0.upto(times_through) do |index|
+    insertion_sorting(array, sorted)
+  end
+
+  def insertion_sorting(unsorted, sorted)
+    unsorted.each do |item|
+      last_sorted_index = sorted.size - 1
+      0.upto(last_sorted_index) do |index|
         if item < sorted[index] && index == 0
           sorted.unshift(item)
           break
