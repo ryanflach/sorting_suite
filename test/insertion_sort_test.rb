@@ -28,11 +28,11 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_it_can_sort_a_reverse_sorted_array
-    assert_equal [1, 2, 3, 4, 5], @sorter.sort([5, 4, 3, 2, 1])
+    assert_equal [11, 22, 33, 44, 55], @sorter.sort([55, 44, 33, 22, 11])
   end
 
   def test_it_can_sort_characters
-    assert_equal ["a", "b", "c"], @sorter.sort(["c", "a", "b"])
+    assert_equal ["a", "b", "c", "d"], @sorter.sort(["d", "b", "a", "c"])
   end
 
   def test_it_can_sort_multichar_strings

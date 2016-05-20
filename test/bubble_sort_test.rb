@@ -41,7 +41,7 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_it_can_also_sort_letters
-    @sorter.sort(["a", "d", "c", "b"])
+    @sorter.sort(["d", "b", "a", "c"])
     assert_equal ["a", "b", "c", "d"], @sorter.sorted
   end
 
