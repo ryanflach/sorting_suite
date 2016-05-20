@@ -1,31 +1,34 @@
 class InsertionSort
 attr_reader :sorted
 
-  def sort(array)
-    return array if array.size <= 1
-    sorted = [array.shift]
-    insertion_sorting(array, sorted)
-  end
-
-  def insertion_sorting(unsorted, sorted)
-    unsorted.each do |item|
-      last_sorted_index = sorted.size - 1
-      0.upto(last_sorted_index) do |index|
-        if item < sorted[index] && index == 0
-          sorted.unshift(item)
-          break
-        elsif item < sorted[index]
-          holding = sorted[index..-1]
-          sorted << item
-          sorted << holding
-          break
-        else
-          sorted << item
-          break
-        end
-      end
+def sort(array)
+  return array if array.nil?
+  1.upto(array.size - 1) do |num|
+    to_insert = array[num]
+    location = num - 1
+    while location >= 0 && array[location] > to_insert
+      array[location + 1] = array[location]
+      location -= 1
     end
-    sorted
+    array[location + 1] = to_insert
   end
+  array
+end
+
+# array = [3, 1, 2]
+# 1..2
+# to_insert == 1
+# location == 0
+# 3 > 1
+# [here , 3]
+# location == -1
+# [1, 3, 2]
+# ----
+# to_insert == 2
+# location == 1
+# 3 > 2
+# [ , , 3]
+# location == 0
+# [1, 2, 3]
 
 end
