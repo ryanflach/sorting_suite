@@ -1,5 +1,4 @@
 class InsertionSort
-attr_reader :sorted
 
 def sort(array)
   return array if array.nil?
@@ -14,21 +13,5 @@ def sort(array)
   end
   array
 end
-
-# array = [3, 1, 2]
-# 1..2
-# to_insert == 1
-# location == 0
-# 3 > 1
-# [here , 3]
-# location == -1
-# [1, 3, 2]
-# ----
-# to_insert == 2
-# location == 1
-# 3 > 2
-# [ , , 3]
-# location == 0
-# [1, 2, 3]
 
 end
