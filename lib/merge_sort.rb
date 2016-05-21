@@ -1,5 +1,16 @@
 class MergeSort
 
+  def merge_sort(array)
+    if array.size <= 1
+      array
+    end
+
+    # Need to split and handle this recursively within merge_sort
+    # mid_point = array.size / 2
+    # left = array.slice(0...mid_point)
+    # right = array.slice(mid_point..-1)
+  end
+
   def pair_split(array)
     if array.size == 2
       array

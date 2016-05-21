@@ -43,5 +43,10 @@ class MergeSortTest < Minitest::Test
     assert_equal [0, 1], result
   end
 
+  def test_it_will_return_an_array_of_size_1
+    result = @merge.merge_sort([1])
+    assert_equal [1], result
+  end
+
 
 end
