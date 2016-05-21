@@ -23,5 +23,10 @@ class MergeSortTest < Minitest::Test
     assert_equal [0, 1, 2, 4, 5, 6, 9], result
   end
 
+  def test_it_can_sort_characters
+    result = @merge.sort(["d", "b", "a", "c"])
+    assert_equal ["a", "b", "c", "d"], result
+  end
+
 
 end

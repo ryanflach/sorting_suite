@@ -24,7 +24,7 @@ class MergeSort
         right_index += 1
       end
     end
-    if left_index == left_array.size - 1
+    if left_index == left_array.size
       right_index.upto(right_array.size - 1) do |index|
         sorted << right_array[index]
       end
