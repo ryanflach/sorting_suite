@@ -8,13 +8,8 @@ class BubbleSort
   end
 
   def sort(array, end_index=array.size-1)
-    if array.empty?
-      nil
-    elsif end_index == 0
-      @sorted = array
-    else
-      bubble_sort(array, end_index)
-    end
+    return array if array.size <= 1
+    bubble_sort(array, end_index)
   end
 
   def bubble_sort(array, end_index)
@@ -28,7 +23,7 @@ class BubbleSort
       @sorted = array
       bubble_sort(array, end_index - 1)
     end
-    sorted
+    return sorted
   end
 
 end
