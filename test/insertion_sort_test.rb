@@ -12,9 +12,9 @@ class InsertionSortTest < Minitest::Test
     assert_equal [1], result
   end
 
-  def test_it_will_return_nil_if_the_array_is_nil
-    result = @sorter.sort(nil)
-    assert_equal nil, result
+  def test_it_will_return_the_empty_array_if_array_is_empty
+    result = @sorter.sort([])
+    assert_equal [], result
   end
 
   def test_it_can_sort_two_items
