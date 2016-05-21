@@ -62,8 +62,8 @@ class InsertionSortTest < Minitest::Test
     assert_equal [0, 1, 3, 4, 5], result
   end
 
-  def test_it_can_also_swap_sort
-    result = @sorter.sort([4, 1, 2, 5, 6, 7])
+  def test_it_can_also_sort_in_place
+    result = @sorter.in_place_insertion_sort([4, 1, 2, 5, 6, 7])
     assert_equal [1, 2, 4, 5, 6, 7], result
   end
 
