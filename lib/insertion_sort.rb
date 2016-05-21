@@ -1,7 +1,7 @@
 class InsertionSort
 
 def sort(array)
-  return array if array.nil?
+  return array if array.size <= 1
   1.upto(array.size - 1) do |index|
     to_insert = array[index]
     location = index - 1
@@ -11,11 +11,11 @@ def sort(array)
     end
     array[location + 1] = to_insert
   end
-  array
+  return array
 end
 
 def swapping_sort(array)
-  return array if array.nil?
+  return array if array.size <= 1
   1.upto(array.size - 1) do |index|
     location = index
     while location > 0 && (array[location - 1] > array[location])
@@ -25,7 +25,7 @@ def swapping_sort(array)
       location -= 1
     end
   end
-  array
+  return array
 end
 
 end
