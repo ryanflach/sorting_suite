@@ -12,6 +12,17 @@ class MergeSortTest < Minitest::Test
     assert_equal [0, 1], result
   end
 
+  def test_it_can_return_the_left_side_of_an_array
+    result = @merge.left_side([0, 1, 2, 3])
+    assert_equal [0, 1], result
+  end
+
+  def test_it_can_return_the_right_side_of_an_array
+    result = @merge.right_side([0, 1, 2, 3])
+    assert_equal [2, 3], result
+  end
+
+
   def test_it_can_return_the_first_number_in_a_split_pair
     first_split = @merge.pair_split([0, 1, 2, 3])
     result = @merge.first_num(first_split)

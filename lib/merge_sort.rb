@@ -4,11 +4,22 @@ class MergeSort
     if array.size == 2
       array
     else
-      size = array.size
-      split_point = (size / 2) - 1
-      split_array = array.slice(0..split_point)
+      split_array = array.slice(0..splitting_point(array))
       pair_split(split_array)
     end
+  end
+
+  def splitting_point(array)
+    size = array.size
+    split_point = (size / 2) - 1
+  end
+
+  def left_side(array)
+    array.slice(0..splitting_point(array))
+  end
+
+  def right_side(array)
+    array.slice(splitting_point(array) + 1..-1)
   end
 
   def first_num(pair)
