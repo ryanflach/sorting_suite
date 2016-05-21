@@ -40,6 +40,11 @@ class BubbleSortTest < Minitest::Test
     assert_equal [5], @sorter.sorted
   end
 
+  def test_it_can_sort_multidigit_numbers
+    @sorter.sort([142, 999, 12, 65])
+    assert_equal [12, 65, 142, 999], @sorter.sorted
+  end
+
   def test_it_can_also_sort_letters
     @sorter.sort(["d", "b", "a", "c"])
     assert_equal ["a", "b", "c", "d"], @sorter.sorted
@@ -53,6 +58,16 @@ class BubbleSortTest < Minitest::Test
   def test_it_can_sort_multichar_strings
     @sorter.sort(["abc", "gad", "aaa"])
     assert_equal ["aaa", "abc", "gad"], @sorter.sorted
+  end
+
+  def test_it_can_sort_an_even_number_of_items
+    @sorter.sort([4, 1, 5, 3])
+    assert_equal [1, 3, 4, 5], @sorter.sorted
+  end
+
+  def test_it_can_sort_an_odd_number_of_items
+    @sorter.sort([4, 1, 5, 3, 2])
+    assert_equal [1, 2, 3, 4, 5], @sorter.sorted
   end
 
 end

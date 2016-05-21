@@ -8,35 +8,58 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_it_will_return_the_array_if_only_one_item
-    assert_equal [1], @sorter.sort([1])
+    result = @sorter.sort([1])
+    assert_equal [1], result
   end
 
   def test_it_will_return_nil_if_the_array_is_nil
-    assert_equal nil, @sorter.sort(nil)
+    result = @sorter.sort(nil)
+    assert_equal nil, result
   end
 
   def test_it_can_sort_two_items
-    assert_equal [1, 2], @sorter.sort([2, 1])
+    result = @sorter.sort([2, 1])
+    assert_equal [1, 2], result
   end
 
   def test_it_can_sort_three_items
-    assert_equal [1, 2, 3], @sorter.sort([3, 1, 2])
+    result = @sorter.sort([3, 1, 2])
+    assert_equal [1, 2, 3], result
   end
 
   def test_it_returns_an_already_sorted_array
-    assert_equal [1, 2, 3, 4], @sorter.sort([1, 2, 3, 4])
+    result = @sorter.sort([1, 2, 3, 4])
+    assert_equal [1, 2, 3, 4], result
   end
 
   def test_it_can_sort_a_reverse_sorted_array
-    assert_equal [11, 22, 33, 44, 55], @sorter.sort([55, 44, 33, 22, 11])
+    result = @sorter.sort([55, 44, 33, 22, 11])
+    assert_equal [11, 22, 33, 44, 55], result
+  end
+
+  def test_it_can_sort_multidigit_numbers
+    result = @sorter.sort([143, 12, 55, 988])
+    assert_equal [12, 55, 143, 988], result
   end
 
   def test_it_can_sort_characters
-    assert_equal ["a", "b", "c", "d"], @sorter.sort(["d", "b", "a", "c"])
+    result = @sorter.sort(["d", "b", "a", "c"])
+    assert_equal ["a", "b", "c", "d"], result
   end
 
   def test_it_can_sort_multichar_strings
-    assert_equal ["abc", "abd", "bde"], @sorter.sort(["bde", "abc", "abd"])
+    result = @sorter.sort(["bde", "abc", "abd"])
+    assert_equal ["abc", "abd", "bde"], result
+  end
+
+  def test_it_can_sort_an_even_number_of_items
+    result = @sorter.sort([4, 5, 1, 0])
+    assert_equal [0, 1, 4, 5], result
+  end
+
+  def test_it_can_sort_an_odd_number_of_items
+    result = @sorter.sort([4, 5, 1, 0, 3])
+    assert_equal [0, 1, 3, 4, 5], result
   end
 
 end
