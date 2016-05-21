@@ -1,53 +1,39 @@
 class MergeSort
 
-  def merge_sort(array)
-    if array.size <= 1
-      array
-    end
+  def sort(array)
+    return array if array.size <= 1
+    mid_point = array.size/2
+    left = array[0...mid_point]
+    right = array[mid_point..-1]
 
-    # Need to split and handle this recursively within merge_sort
-    # mid_point = array.size / 2
-    # left = array.slice(0...mid_point)
-    # right = array.slice(mid_point..-1)
+    left_items = sort(left)
+    right_items = sort(right)
+    return merge_sort(left_items, right_items)
   end
 
-  def pair_split(array)
-    if array.size == 2
-      array
+  def merge_sort(left_array, right_array)
+    sorted = []
+    left_index = 0
+    right_index = 0
+    while left_index < left_array.size && right_index < right_array.size
+      if left_array[left_index] < right_array[right_index]
+        sorted << left_array[left_index]
+        left_index += 1
+      else
+        sorted << right_array[right_index]
+        right_index += 1
+      end
+    end
+    if left_index == left_array.size - 1
+      right_index.upto(right_array.size - 1) do |index|
+        sorted << right_array[index]
+      end
     else
-      split_array = array.slice(0..splitting_point(array))
-      pair_split(split_array)
+      left_index.upto(left_array.size - 1) do |index|
+        sorted << left_array[index]
+      end
     end
-  end
-
-  def splitting_point(array)
-    size = array.size
-    split_point = (size / 2) - 1
-  end
-
-  def left_side(array)
-    array.slice(0..splitting_point(array))
-  end
-
-  def right_side(array)
-    array.slice(splitting_point(array) + 1..-1)
-  end
-
-  def first_num(pair)
-    pair[0]
-  end
-
-  def second_num(pair)
-    pair[1]
-  end
-
-  def compare_and_reassemble(num1, num2)
-    rebuilt = []
-    if num1 >= num2
-      rebuilt = [num2, num1]
-    else
-      rebuilt = [num1, num2]
-    end
+    return sorted
   end
 
 end
