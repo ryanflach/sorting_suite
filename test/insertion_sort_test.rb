@@ -63,7 +63,7 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_it_can_also_sort_in_place
-    result = @sorter.in_place_insertion_sort([4, 1, 2, 5, 6, 7])
+    result = @sorter.inplace_sort([4, 1, 2, 5, 6, 7])
     assert_equal [1, 2, 4, 5, 6, 7], result
   end
 

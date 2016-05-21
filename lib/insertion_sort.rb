@@ -2,10 +2,10 @@ class InsertionSort
 
 def sort(array)
   return array if array.size <= 1
-  swapping_insertion_sort(array)
+  insertion_sort(array)
 end
 
-def swapping_insertion_sort(array)
+def insertion_sort(array)
   return array if array.size <= 1
   1.upto(array.size - 1) do |index|
     location = index
@@ -19,7 +19,7 @@ def swapping_insertion_sort(array)
   return array
 end
 
-def in_place_insertion_sort(array)
+def inplace_sort(array)
   1.upto(array.size - 1) do |index|
     to_insert = array[index]
     location = index - 1
