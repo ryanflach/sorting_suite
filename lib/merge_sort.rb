@@ -25,15 +25,18 @@ class MergeSort
       end
     end
     if left_index == left_array.size
-      right_index.upto(right_array.size - 1) do |index|
-        sorted << right_array[index]
-      end
+      add_remaining(sorted, right_array, right_index)
     else
-      left_index.upto(left_array.size - 1) do |index|
-        sorted << left_array[index]
-      end
+      add_remaining(sorted, left_array, left_index)
     end
     return sorted
+  end
+
+  def add_remaining(final_array, items_to_add, starting_index)
+    starting_index.upto(items_to_add.size - 1) do |index|
+      final_array << items_to_add[index]
+    end
+    return final_array
   end
 
 end

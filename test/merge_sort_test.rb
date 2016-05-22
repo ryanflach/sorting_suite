@@ -58,4 +58,18 @@ class MergeSortTest < Minitest::Test
     assert_equal [06, 13, 41, 455], result
   end
 
+  def test_add_remaining_adds_one_array_to_another
+    add_to = [1, 2]
+    add = [4, 6, 7]
+    result = @merge.add_remaining(add_to, add, 0)
+    assert_equal [1, 2, 4, 6, 7], result
+  end
+
+  def test_add_remaining_can_add_to_an_array_from_a_set_position_in_another
+    add_to = [1, 2]
+    add = [1, 2, 3, 5, 7]
+    result = @merge.add_remaining(add_to, add, 2)
+    assert_equal [1, 2, 3, 5, 7], result
+  end
+
 end
