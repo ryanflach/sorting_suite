@@ -13,7 +13,7 @@
     def insertion_sort(array)
       1.upto(array.size - 1) do |index|
         location = index
-        while location > 0 && (array[location - 1] > array[location])
+        while location > 0 && array[location - 1] > array[location]
           swap(array, location)
           location -= 1
         end
