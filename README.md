@@ -10,8 +10,8 @@ A SortingSuite module has been created and stored in `sorting_suite.rb` to allow
 
 Additionally, this version of the project includes two extensions:
 
-1. _`inplace_sort` _for InsertionSort_
+1. *`inplace_sort` for InsertionSort*
   * Access to the method `inplace_sort` is available via the original class or the SortingSuite module.
   * Per the spec, the InsertionSort methods `sort` and `inplace_sort` will use the array that the class was instantiated with, if present.
-2. _Benchmarking_
+2. *Benchmarking*
   * Benchmark is its own class, but per the spec usage will occur via the SortingSuite module. The three primary methods, `time`, `fastest`, and `slowest`, return a string indicating the time taken, which method is fastest, and which method is slowest, respectively.
