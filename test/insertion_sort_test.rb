@@ -67,10 +67,16 @@ class InsertionSortTest < Minitest::Test
     assert_equal [1, 2, 4, 5, 6, 7], result
   end
 
-  def test_swap_can_switch_two_items_in_an_array
+  def test_swap_can_swap_two_items_in_an_array
     array = [1, 3, 2, 4]
     result = @sorter.swap(array, 2)
     assert_equal [1, 2, 3, 4], result
+  end
+
+  def test_swap_swaps_the_item_at_the_selected_position_with_the_one_previous
+    array = [1, 3, 2, 4]
+    result = @sorter.swap(array, 3)
+    assert_equal [1, 3, 4, 2], result
   end
 
 end
