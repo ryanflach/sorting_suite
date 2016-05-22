@@ -23,8 +23,8 @@
 
     def inplace_sort(array=initialized_array)
       1.upto(array.size - 1) do |index|
-        to_insert = array[index]
         location = index - 1
+        to_insert = array[index]
         while location >= 0 && array[location] > to_insert
           array[location + 1] = array[location]
           location -= 1
