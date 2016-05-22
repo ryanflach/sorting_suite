@@ -18,7 +18,7 @@ attr_reader :set_array
     else
       time_taken = run_test_and_time(sorting_method, array)
       text_format = sorting_method.to_s.split('::').last
-      "#{text_format} took #{time_taken} seconds"
+      "#{text_format} took #{time_taken} seconds (#{time_taken * 1000} milliseconds)"
     end
   end
 
@@ -54,7 +54,7 @@ attr_reader :set_array
     starting = Time.now
     sorting_method.new.sort(array)
     ending = Time.now
-    return ((ending - starting).to_f % 60 * 1000).round(6)
+    return ((ending - starting).to_f % 60).round(6)
   end
 
 end
