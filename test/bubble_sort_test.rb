@@ -18,8 +18,8 @@ class BubbleSortTest < Minitest::Test
   end
 
   def test_can_sort_a_larger_array
-    result = @sorter.sort([4, 2, 5, 1, 3])
-    assert_equal [1, 2, 3, 4, 5], result
+    result = @sorter.sort([4, 2, 5, 1, 3, 6, 9, 7, 8])
+    assert_equal [1, 2, 3, 4, 5, 6, 7, 8, 9], result
   end
 
   def test_it_can_sort_a_reverse_sorted_array
