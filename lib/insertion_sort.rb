@@ -1,6 +1,11 @@
   class InsertionSort
+    attr_reader :initialized_array
 
-    def sort(array)
+    def initialize(array=nil)
+      @initialized_array = array
+    end
+
+    def sort(array=initialized_array)
       return array if array.size <= 1
       insertion_sort(array)
     end
@@ -16,7 +21,7 @@
       return array
     end
 
-    def inplace_sort(array)
+    def inplace_sort(array=initialized_array)
       1.upto(array.size - 1) do |index|
         to_insert = array[index]
         location = index - 1

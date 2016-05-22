@@ -79,4 +79,21 @@ class InsertionSortTest < Minitest::Test
     assert_equal [1, 3, 4, 2], result
   end
 
+  def test_it_can_be_initialized_with_an_array
+    example = InsertionSort.new([1, 2, 3])
+    assert_equal [1, 2, 3], example.initialized_array
+  end
+
+  def test_in_place_sort_will_use_the_initialized_array_when_no_arg_given
+    example = InsertionSort.new([3, 1, 2])
+    result = example.inplace_sort
+    assert_equal [1, 2, 3], result
+  end
+
+  def test_sort_will_also_use_the_initialized_array_when_no_arg_given
+    example = InsertionSort.new([3, 1, 2])
+    result = example.sort
+    assert_equal [1, 2, 3], result
+  end
+
 end
