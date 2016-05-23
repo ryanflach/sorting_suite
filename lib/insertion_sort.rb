@@ -43,7 +43,6 @@
         location -= 1
       end
       array[location + 1] = to_insert
-      return array
     end
 
   end
