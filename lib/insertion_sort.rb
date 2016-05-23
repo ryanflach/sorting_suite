@@ -25,11 +25,7 @@
       1.upto(array.size - 1) do |index|
         location = index - 1
         to_insert = array[index]
-        while location >= 0 && array[location] > to_insert
-          array[location + 1] = array[location]
-          location -= 1
-        end
-        array[location + 1] = to_insert
+        insert(array, location, to_insert)
       end
       return array
     end
@@ -38,6 +34,15 @@
       to_swap = array[location]
       array[location] = array[location - 1]
       array[location - 1] = to_swap
+      return array
+    end
+
+    def insert(array, location, to_insert)
+      while location >= 0 && array[location] > to_insert
+        array[location + 1] = array[location]
+        location -= 1
+      end
+      array[location + 1] = to_insert
       return array
     end
 

@@ -96,4 +96,12 @@ class InsertionSortTest < Minitest::Test
     assert_equal [1, 2, 3], result
   end
 
+  def test_insert_puts_an_item_in_a_specific_location
+    array = [1, 2, 4, 5]
+    to_insert = 3
+    index = 2
+    result = @sorter.insert(array, index, to_insert)
+    assert_equal [1, 2, 3, 4], result
+  end
+
 end
